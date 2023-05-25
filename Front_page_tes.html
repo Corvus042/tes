@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<head>
+  <title>front_page</title>
+  <style>
+    body {
+      background-image: url("C:/Users/Nwgol/Onedrive/Desktop/webs/a/back temp.jpg");
+      width: 1280px; /* Set a fixed width for the body */
+      margin: 0 auto; /* Center the body horizontally */
+    }
+
+  
+
+
+    header {
+      background-image: url("C:/Users/Nwgol/Onedrive/Desktop/webs/a/Title temp better.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 260px;
+      text-align: center;
+      font-size: 35px;
+      margin-top: 20px;
+
+      .invisible-button {
+        background: none;
+        border: none;
+        color:transparent;
+      }
+    }
+
+    header h2 {
+      position: relative;
+      top: 98px; 
+      left: 50%; /* Optional: Center the text horizontally */
+      transform: translateX(-48%); /* Optional: Center the text horizontally */
+    }
+
+  header button{
+    position: relative;
+    bottom: 90px;
+  }
+
+
+    aside {
+      background-image: url("C:/Users/Nwgol/Onedrive/Desktop/webs/a/side temp.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: fixed;
+      text-align:center;
+      height: 600px;
+      width: 250px;
+      margin-top: 0px;
+      margin-left: 50px;
+    }
+    aside h2 {
+      color:rgb(65, 15, 87) ;
+      position:relative;
+      top: 45px;
+      font-size: 21px;
+    }
+    aside table {
+      text-align: left;
+      position:relative;
+      font-size: 21px;
+      top: 40px;
+      left: 40px;
+    }
+    aside td{
+      padding: 10px;
+      color:rgb(69, 233, 233);
+    }
+
+    div {
+      background-image: url("C:/Users/Nwgol/Onedrive/Desktop/webs/a/quote temp.png");
+      background-repeat: no-repeat;
+      background-size:cover;
+      background-position: fixed;
+      text-align:left;
+      height: 169px;
+      width: 675px;
+      margin-left: 420px;
+      margin-top: -21px;
+      font-style: italic;
+      letter-spacing: 5px;
+    }
+    div p{
+      position: relative;
+      font-size: 12.5px;
+      color:rgb(201, 242, 255);
+      top:30%;
+      margin-left: 80px;
+    }
+    .hide {
+      display: none;
+    }
+
+    article {
+      margin-left: 350px;
+      margin-top: -600px;
+
+    }
+    article button{
+      margin-left: 20px;
+    }
+    section {
+      display: none;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 500px;
+      width: 900px;
+      margin-top: -70px;
+      margin-left: -60px
+    }
+    section h2{
+        position: relative;
+        margin-left: 48px;
+        top: 20%
+    }
+    section p{
+        position: relative;
+        margin-left: 50px;
+        top: 17%
+    }
+    #section1 {
+      background-image: url("C:/Users/Nwgol/Onedrive/Desktop/webs/a/art1.png");
+    }
+
+    #section2 {
+      background-image: url("C:/Users/Nwgol/Onedrive/Desktop/webs/a/art2.png");
+    }
+
+    #section3 {
+      background-image: url("C:/Users/Nwgol/Onedrive/Desktop/webs/a/art3.png");
+    }
+    .invisible-button {
+        background: none;
+        border: none;
+        color:transparent;
+    }
+
+  </style>
+<script>
+  function switchSection(sectionId) {
+    // Hide all sections
+    var sections = document.querySelectorAll('section');
+    sections.forEach(function(section) {
+      section.style.display = 'none';
+    });
+
+    // Show the selected section
+    var selectedSection = document.getElementById(sectionId);
+    selectedSection.style.display = 'block';
+  }
+</script>
+
+
+</head>
+
+
+<body>
+<header> 
+  <h2>Epic webshit Title</h2>
+  <button class="invisible-button" onclick="window.location.href = 'GNAW_game.html';">GNAW</button>
+</header>
+<div>
+  <p>Learn at first concentration without effort;<br>
+    Transform work into play;<br>
+    make every yoke that you have accepted easy<br>
+    and every burden that you carry light !<br></p>
+    <p style="margin-left: 380px; margin-top: -10px; color:rgb(153, 11, 39);" >-The Magician.</p>
+  </div>
+  <aside>
+    <h2>Passions Directory</h2>
+    <nav>
+      <table>
+        <tr>
+          <td><a href = 'work_in_prog.html'>Art </a></td>
+        </tr>
+        <tr>
+          <td><a href = 'work_in_prog.html'> Blog</a></td>
+        </tr>
+        <tr>
+          <td><a href = 'work_in_prog.html'> DND</a></td>
+        </tr>
+        <tr>
+          <td><a href = 'work_in_prog.html'>Research </a></td>
+        </tr>
+        <tr>
+          <td><a href = 'work_in_prog.html'> Music </a></td>
+        </tr>
+  </table></nav></aside>
+
+  <article>
+    <button class="invisible-button" onclick="switchSection('section1')">Section 1</button>
+    <button class="invisible-button" onclick="switchSection('section2')">Section 2</button>
+    <button class="invisible-button" onclick="switchSection('section3')">Section 3</button>
+
+    <section id="section1" style="display: block;">
+     <h2 style = 'color:rgb(65, 15, 87)'>What is this Website?</h2>
+     <p style="max-width:800px;"> Ever notice a crow's inclination to accumulate hordes of trinkets? Stygian little dragons perched upon heaps of shiny
+      do-dads and thingy me-bobs. You see dear reader, I'm very akin. Anything and everything with a remote glimmer that stirs 
+      at my interest I must have, and this goes far beyond the material. I mainly collect skills, interests, and ideas. Of course, my 
+      bookcase can hold my books and my trinkets I collect, but there is no room for the products of the mind there. My art, 
+      music, ideas, research and more all are adrift across different islands. This website is my curation of passions. 
+      It is a horde which is ever growing, reaching higher and higher. 
+      This is largely for me but I welcome all to come and shift through the lovely junk I've produced and collected. <br><br> 
+      Click on contact for email and social and click on skills to see what this old dog can do!!
+    </p>
+   </section>
+
+    <section id="section2">
+      <h2>Section 2</h2>
+      <p>NOTHING YET TO SEE HERE YOU PERV!!!!! </p>
+    </section>
+
+    <section id="section3">
+      <h2>Section 3</h2>
+      <p>NOTHING YET TO SEE HERE YOU PERV!!!!!</p>
+    </section>
+  </article>
+
+
+
+
+</body>
+  
