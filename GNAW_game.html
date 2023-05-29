@@ -1,16 +1,91 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <style>
+	body {
+		background-image: url("https://i.imgur.com/TLFvm4F.png");
+		background-position: top;
+		background-position-x: center;
+		background-color: rgb(15, 1, 1);
+		background-size: 1280px 1000px;
+		background-repeat: no-repeat;
+		width: 1280px;
+		margin: 0 auto;
+		position: relative;
+	}
+
+	div {
+		position: relative;
+	}
+
+	article {
+		background-image: url("https://i.imgur.com/bYs6VPf.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		height: 190px;
+		width: 650px;
+		margin-top: 810px;
+	}
+
+	article h4{
+		position: relative;
+		color: rgb(201, 242, 255);
+		top: 30%;
+		margin-left: 75px;
+	}
+	article p{
+		position: relative;
+		font-size: 20px;
+		color: rgb(201, 242, 255);
+		top: 2.1%;
+		margin-left: 98px;
+		left: 190px;
+	}
+
+	article button {
+		position: relative;
+		top: 25%;
+		margin-left: 160px;
+	}
+
+	#gifContainer {
+		position: absolute;
+		left: 50%;
+		top: 80%;
+		transform: translate(-50%, -50%);
+		margin-top: -300px;
+	}
+
+	#gifContainer img {
+		width: 90%;
+		height: auto;
+		position: relative;
+		margin-top: 30px;
+	}
+
+	#myButton {
+		display: inline-block;
+		margin-right: 10px;
+		vertical-align: top; /* Align the button with the top of the line */
+	}
+
+	#counter {
+		display: inline-block;
+		vertical-align: top; /* Align the counter with the top of the line */
+	}
+  </style>
 </head>
 <body>
-	<h1>GNAW Game Test</h1>
-	<p>Click the button to annouce to the world all your deepest thoughts!!</p>
-	<button id="myButton" onclick="clickHandler()">Click to GNAW!!</button>
-  <p>GNAW Score: <span id="counter">0</span></p>
+	<article>
+		<h4>Click the button to announce to the world all your deepest thoughts!!</h4>
+		<button id="myButton" onclick="clickHandler()">Click to GNAW!!</button>
+		<p>GNAW Score: <span id="counter">0</span></p>
+	</article>
 	<div id="gifContainer"></div>
 	<script>
 		var counter = 0;
 		var gifContainer = document.getElementById("gifContainer");
-		var gifUrl = "https://i.imgur.com/fD7bZyr.gif";
+		var gifUrl = "https://i.imgur.com/1f5twGn.gif";
 		function clickHandler() {
 			counter++;
 			document.getElementById("counter").innerHTML = counter;
