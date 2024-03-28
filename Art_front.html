@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Gallery</title>
+  <style>
+    /* Add any desired CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      width: 1280px; /* Set a fixed width for the body */
+      margin: 0 auto;
+      background-image: url("a/back1.png");
+    }
+    
+    header {
+      padding: 20px;
+      text-align: center;
+      background-image:  url("a/tit.png") ;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: "Computer Modern";
+      color:aqua;
+
+
+    }
+    
+    article {
+      margin: 20px;
+    }
+    
+    .image-row {
+      display: flex;
+      justify-content:space-between;
+      margin-bottom: 20px;
+      max-width: 800px;
+      margin-left: 220px;
+    }
+    
+    .image-container {
+      flex: 0 0 48%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      max-height: 350px; /* Set the maximum height of the images */
+      margin: 0 auto; /* Center the images horizontally */
+      cursor: pointer;
+    }
+    
+    .image-description {
+      margin-top: 10px;
+      font-size: 14px;
+      background-color: #000000;
+      color: #ffffff;
+      border: 1px solid  #ffffff;
+    }
+    
+    footer {
+      background-color: #000000;
+      padding: 20px;
+      text-align: center;
+    }
+    
+
+   /* Style for expanded image overlay */
+   .expanded-image-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    
+    .expanded-image-overlay img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    /* Pagination links */
+    .pagination {
+      
+      width: auto;
+      height: 130px;
+      background-image: url("a/tit2.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      display: flex; /* Use Flexbox */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+    }
+
+    .pagination a {
+      display: inline-flexbox;
+      padding: 5px 10px;
+      margin: 0 5px;
+      background-color: #000000;
+      border: 1px solid #000000;
+      border-radius: 3px;
+      text-decoration: none;
+      color: #ff1d1d;
+    }
+
+    .pagination a.active {
+      background-color: #000000;
+      color: #00ff80;
+      border: 1px solid #00ff80;
+    }
+    .pagination a:hover:not(.active) {background-color:#00ff80;}
+  </style>
+  <script>
+    // JavaScript to handle image expansion
+    function expandImage(img) {
+      var overlay = document.getElementById('expanded-image-overlay');
+      var expandedImage = overlay.getElementsByTagName('img')[0];
+      
+      expandedImage.src = img.src;
+      overlay.style.display = 'flex';
+    }
+    
+    function closeExpandedImage() {
+      var overlay = document.getElementById('expanded-image-overlay');
+      overlay.style.display = 'none';
+    }
+
+    // JavaScript for pagination
+    function showPage(pageNum) {
+      var pages = document.getElementsByClassName('image-page');
+      for (var i = 0; i < pages.length; i++) {
+        pages[i].style.display = 'none';
+      }
+      pages[pageNum - 1].style.display = 'block';
+
+      var links = document.getElementsByClassName('page-link');
+      for (var i = 0; i < links.length; i++) {
+        links[i].classList.remove('active');
+      }
+      links[pageNum - 1].classList.add('active');
+    }
+  </script>
+</head>
+<body>
+  
+  <header>
+    <h1>Art Gallery </h1>
+  </header>
+  
+  <article id = "gallery">
+    <div class="image-row" >
+      <div class="image-container" >
+        <img src="d\Piccolosoup.png" alt="Piccolo Goes to the Store" onclick="expandImage(this)">
+        <div class="image-description">Piccolo Goes to the Store (fan-art)</div>
+      </div>
+      <div class="image-container">
+        <img src="d\Cirno_carrot.png"  alt="Cirno Cookin"onclick="expandImage(this)">
+        <div class="image-description">Cirno Cookin (fan-art)</div>
+      </div>
+    </div>
+    <div class="image-row" >
+      <div class="image-container" >
+        <img src="d\death.png" alt="Death" onclick="expandImage(this)">
+        <div class="image-description">Death (fan-art)</div>
+      </div>
+      <div class="image-container">
+        <img src="d\lady.png"  alt="Lady"onclick="expandImage(this)">
+        <div class="image-description">Lady</div>
+      </div>
+    </div>
+    <div class="image-row">
+      <div class="image-container">
+        <img src="d\Hazard.png" alt="Hazard (commission)" onclick="expandImage(this)">
+        <div class="image-description">Hazard (commission)</div>
+      </div>
+      <div class="image-container">
+        <img src="d\tortle-back.png"  alt="Turtle Cleric (commission)" onclick="expandImage(this)">
+        <div class="image-description">Turtle Cleric (commission)</div>
+      </div>
+    </div>
+    <div class="image-row" >
+      <div class="image-container" >
+        <img src="d\Mituna_contrast.png" alt="Mituna" onclick="expandImage(this)">
+        <div class="image-description">Mituna (fan-art)</div>
+      </div>
+      <div class="image-container">
+        <img src="d\lizard wizard.png"  alt="Liz Wiz"onclick="expandImage(this)">
+        <div class="image-description">A Lizard Wizard?</div>
+      </div>
+    </div>
+    <div class="image-row" >
+      <div class="image-container" >
+        <img src="d\mrgnao.png" alt="mrgnao" onclick="expandImage(this)">
+        <div class="image-description">Mrgnao - Cat Collection</div>
+      </div>
+      <div class="image-container">
+        <img src="d\purr.png" alt="Purr" onclick="expandImage(this)">
+        <div class="image-description">Purr - Cat Collection</div>
+      </div>
+      </div>
+      <div class="image-row" >
+        <div class="image-container" >
+          <img src="d\gum.png" alt="Gum" onclick="expandImage(this)">
+          <div class="image-description">Gum</div>
+        </div>
+        <div class="image-container">
+          <img src="d\Racheal.png"  alt="Rachael"onclick="expandImage(this)">
+          <div class="image-description">Rachael</div>
+        </div>
+      </div>
+      <div class="image-row">
+        <div class="image-container">
+          <img src="d\crows.png" alt="Murder" onclick="expandImage(this)">
+          <div class="image-description">A Murder</div>
+        </div>
+        <div class="image-container">
+          <img src="d\rabbit.png"  alt="Dad Rabbit" onclick="expandImage(this)">
+          <div class="image-description">Dad Rabbit</div>
+        </div>
+      </div>
+      <div class="image-row" >
+        <div class="image-container" >
+          <img src="d\Hall.png" alt="Hall" onclick="expandImage(this)">
+          <div class="image-description">Hall</div>
+        </div>
+        <div class="image-container">
+          <img src="d\bleh.png"  alt="Bleh" onclick="expandImage(this)">
+          <div class="image-description">woman with buns</div>
+        </div>
+        </div>
+        <div class="image-row" >
+          <div class="image-container" >
+            <img src="d\killer and todd.png" alt="Killer and Todd" onclick="expandImage(this)">
+            <div class="image-description">Killer and Todd</div>
+          </div>
+          <div class="image-container">
+            <img src="d\oso_mina.png"  alt="Mina (commission)"onclick="expandImage(this)">
+            <div class="image-description">Mina (commission)</div>
+          </div>
+        </div>
+        <div class="image-row">
+          <div class="image-container">
+            <img src="d\demons.png"alt="Harness" onclick="expandImage(this)">
+            <div class="image-description">Harness</div>
+          </div>
+          <div class="image-container">
+            <img src="d\ocean.png" alt="The Sea is Too Familiar " onclick="expandImage(this)">
+            <div class="image-description">"The Sea is too Familiar"</div>
+          </div>
+        </div>
+        <div class="image-row" >
+          <div class="image-container" >
+            <img src="d\peace and quiet.png"alt="Peace and Quiet" onclick="expandImage(this)">
+            <div class="image-description">Peace and Quiet</div>
+          </div>
+          <div class="image-container">
+            <img src="d\port.png"  alt="Self Portrait" onclick="expandImage(this)">
+            <div class="image-description">Self Portrait</div>
+          </div>
+          </div>
+    <div class="image-row" >
+      <div class="image-container" >
+        <img src="d\bodie18.png" alt="Bodie" onclick="expandImage(this)">
+        <div class="image-description">My sister's dog Bodie</div>
+      </div>
+      <div class="image-container">
+        <img src="d\broadcast.png"  alt="Broadcast"onclick="expandImage(this)">
+        <div class="image-description">Broadcast</div>
+      </div>
+    </div>
+    <div class="image-row">
+      <div class="image-container">
+        <img src="d\milk.png" alt="Milk" onclick="expandImage(this)">
+        <div class="image-description">Milk</div>
+      </div>
+      <div class="image-container">
+        <img src="d\Cyclic.png"  alt="Cyclic" onclick="expandImage(this)">
+        <div class="image-description">Cycles</div>
+      </div>
+    </div>
+    <div class="image-row" >
+      <div class="image-container" >
+        <img src="d\kermet.png" alt="Lizard Wizard" onclick="expandImage(this)">
+        <div class="image-description">Kermit</div>
+      </div>
+      <div class="image-container">
+        <img src="d\Jill rat draft.png" alt="Jills (commission)" onclick="expandImage(this)">
+        <div class="image-description">Jills (commission)</div>
+      </div>
+      </div>
+      <div class="image-row" >
+        <div class="image-container" >
+          <img src="d\Gag Gum.png" alt="Gag Gum" onclick="expandImage(this)">
+          <div class="image-description">Gag Gum (fan-art)</div>
+        </div>
+        <div class="image-container">
+          <img src="d\old ugly men.png"  alt="old ugly men"onclick="expandImage(this)">
+          <div class="image-description">Old Ugly Men</div>
+        </div>
+      </div>
+
+  </article>
+
+  <div  class="pagination" id="pagination"></div>
+
+  <footer>
+    <h2 style = "background-color: #000000; color: #ffffff;">Put Commission Info Here!</h2>
+    
+  </footer>
+  <script>
+    var images = document.querySelectorAll('.image-container');
+    var gallery = document.getElementById('gallery');
+    var pagination = document.getElementById('pagination');
+    var imagesPerPage = 6;
+  
+    function showPage(pageNumber) {
+   var startIndex = (pageNumber - 1) * imagesPerPage;
+   var endIndex = startIndex + imagesPerPage;
+   var pageImages = Array.from(images).slice(startIndex, endIndex);
+
+    gallery.innerHTML = ''; // Clear existing content
+
+    var rowDiv = document.createElement('div');
+    rowDiv.classList.add('image-row');
+
+    pageImages.forEach(function(imageContainer, index) {
+      if (index > 0 && index % 2 === 0) {
+        gallery.appendChild(rowDiv);
+        rowDiv = document.createElement('div');
+        rowDiv.classList.add('image-row');
+      }
+
+      var clonedImageContainer = imageContainer.cloneNode(true);
+     rowDiv.appendChild(clonedImageContainer);
+    });
+
+    // Append the last row if it's not already added
+    if (rowDiv.hasChildNodes()) {
+    gallery.appendChild(rowDiv);
+   }
+
+    updatePaginationLinks(pageNumber);
+  }
+  
+    function setupPagination() {
+      var pageCount = Math.ceil(images.length / imagesPerPage);
+      pagination.innerHTML = '';
+  
+      for (var i = 1; i <= pageCount; i++) {
+        var link = document.createElement('a');
+        link.href = '#';
+        link.textContent = i;
+        link.addEventListener('click', function(event) {
+          event.preventDefault();
+          var pageNumber = parseInt(this.textContent);
+          showPage(pageNumber);
+        });
+        pagination.appendChild(link);
+      }
+  
+      updatePaginationLinks(1);
+    }
+  
+    function updatePaginationLinks(activePage) {
+      var links = pagination.getElementsByTagName('a');
+      for (var i = 0; i < links.length; i++) {
+        links[i].classList.remove('active');
+        if (parseInt(links[i].textContent) === activePage) {
+          links[i].classList.add('active');
+        }
+      }
+    }
+  
+    showPage(1);
+    setupPagination();
+  </script>
+  
+</body>
+</html>
